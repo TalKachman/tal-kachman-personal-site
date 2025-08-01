@@ -73,6 +73,123 @@ p {
   color: #d0d0d0;
 }
 
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border-left: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.contact-info strong {
+  color: #f5f5f5;
+}
+
+/* Research Page Styles */
+.research-section {
+  margin: 3rem 0;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.research-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.research-item h3 {
+  color: #f5f5f5;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.research-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.research-item li {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  position: relative;
+  color: #d0d0d0;
+}
+
+.research-item li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.publications, .patents {
+  margin-top: 1.5rem;
+}
+
+.publication, .patent {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.publication h3, .patent h3 {
+  color: #f5f5f5;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.publication-meta, .patent-meta {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.physics-research ul {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.physics-research li {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  position: relative;
+  color: #d0d0d0;
+  break-inside: avoid;
+}
+
+.physics-research li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.4);
+}
+
 .social-icons {
   list-style: none;
   padding: 0;
