@@ -1,0 +1,14 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#1a1a1a"/>
+  <g transform="translate(200,150)">
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+    <circle cx="-40" cy="-30" r="15" fill="#ffffff" opacity="0.6"/>
+    <circle cx="40" cy="-30" r="15" fill="#ffffff" opacity="0.6"/>
+    <circle cx="0" cy="40" r="15" fill="#ffffff" opacity="0.6"/>
+    <line x1="-40" y1="-30" x2="40" y2="-30" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+    <line x1="-40" y1="-30" x2="0" y2="40" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+    <line x1="40" y1="-30" x2="0" y2="40" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+  </g>
+  <text x="200" y="250" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="16" opacity="0.7">Neural Payoff Machines</text>
+  <text x="200" y="270" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12" opacity="0.5">Fair Team Resource Allocation</text>
+</svg>

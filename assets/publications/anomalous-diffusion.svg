@@ -1,0 +1,12 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#1a1a1a"/>
+  <g transform="translate(50,150)">
+    <path d="M 0,0 Q 50,-30 100,10 Q 150,50 200,-20 Q 250,30 300,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+    <path d="M 0,20 Q 60,0 120,40 Q 180,-10 240,30 Q 280,60 300,20" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+    <circle cx="0" cy="0" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="150" cy="20" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="300" cy="10" r="3" fill="#ffffff" opacity="0.8"/>
+  </g>
+  <text x="200" y="250" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="16" opacity="0.7">Anomalous Diffusion</text>
+  <text x="200" y="270" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12" opacity="0.5">Fractional Brownian vs Ito Motion</text>
+</svg>

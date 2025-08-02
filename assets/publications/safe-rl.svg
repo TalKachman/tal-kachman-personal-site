@@ -1,0 +1,8 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#1a1a1a"/>
+  <rect x="50" y="50" width="300" height="200" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+  <circle cx="200" cy="150" r="60" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+  <rect x="170" y="120" width="60" height="60" fill="#ffffff" opacity="0.1"/>
+  <text x="200" y="250" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="16" opacity="0.7">Safe RL from Pixels</text>
+  <text x="200" y="270" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12" opacity="0.5">Stochastic Latent Representation</text>
+</svg>
