@@ -9,6 +9,22 @@ body, html {
   font-weight: 400;
 }
 
+/* CSS Custom Properties for Color Palette */
+:root {
+  --primary-bg: #1a1a1a;
+  --secondary-bg: #242424;
+  --accent-blue: #4a9eff;
+  --accent-teal: #26d0ce;
+  --accent-purple: #7c3aed;
+  --warm-white: #fafafa;
+  --soft-grey: #e0e0e0;
+  --muted-grey: #b0b0b0;
+  --subtle-grey: #808080;
+  --border-color: rgba(74, 158, 255, 0.2);
+  --highlight-bg: rgba(74, 158, 255, 0.08);
+  --hover-bg: rgba(74, 158, 255, 0.12);
+}
+
 canvas#bg {
   position: fixed;
   top: 0;
@@ -32,16 +48,26 @@ header {
 }
 
 nav a {
-  color: white;
+  color: var(--warm-white);
   text-decoration: none;
   margin-left: 1.5rem;
   font-size: 1rem;
-  transition: opacity 0.2s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  position: relative;
 }
 
 nav a:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+  color: var(--accent-blue);
+  background-color: var(--highlight-bg);
+  transform: translateY(-1px);
+}
+
+nav a:focus {
+  outline: 2px solid var(--border-color);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
 main {
@@ -63,7 +89,19 @@ h2 {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 2rem 0 1rem 0;
-  color: #e0e0e0;
+  color: var(--accent-blue);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-teal));
+  border-radius: 1px;
 }
 
 p {
@@ -82,9 +120,16 @@ p {
 .contact-info {
   margin-top: 3rem;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--highlight-bg);
   border-radius: 12px;
-  border-left: 3px solid rgba(255, 255, 255, 0.2);
+  border-left: 3px solid var(--accent-blue);
+  transition: all 0.3s ease;
+}
+
+.contact-info:hover {
+  background: var(--hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 158, 255, 0.1);
 }
 
 .contact-info p {
@@ -97,13 +142,15 @@ p {
 }
 
 .contact-info a {
-  color: #ffffff;
-  text-decoration: underline;
-  transition: opacity 0.3s ease;
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
 }
 
 .contact-info a:hover {
-  opacity: 0.8;
+  color: var(--accent-teal);
+  border-bottom: 1px solid var(--accent-teal);
 }
 
 /* Research Page Styles */
@@ -119,10 +166,17 @@ p {
 }
 
 .research-item {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--highlight-bg);
   padding: 2rem;
   border-radius: 12px;
-  border-left: 3px solid rgba(255, 255, 255, 0.2);
+  border-left: 3px solid var(--accent-teal);
+  transition: all 0.3s ease;
+}
+
+.research-item:hover {
+  background: var(--hover-bg);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(38, 208, 206, 0.1);
 }
 
 .research-item h3 {
@@ -156,11 +210,18 @@ p {
 }
 
 .publication, .patent {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--highlight-bg);
   padding: 1.5rem;
   margin: 1rem 0;
   border-radius: 8px;
-  border-left: 2px solid rgba(255, 255, 255, 0.15);
+  border-left: 2px solid var(--accent-purple);
+  transition: all 0.3s ease;
+}
+
+.publication:hover, .patent:hover {
+  background: var(--hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.1);
 }
 
 .publication h3, .patent h3 {
@@ -412,17 +473,18 @@ p {
 .publication-item {
   display: flex;
   gap: 2rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--highlight-bg);
   padding: 2rem;
   margin: 2rem 0;
   border-radius: 12px;
-  border-left: 3px solid rgba(255, 255, 255, 0.15);
+  border-left: 3px solid var(--accent-blue);
   transition: all 0.3s ease;
 }
 
 .publication-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-2px);
+  background: var(--hover-bg);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(74, 158, 255, 0.15);
 }
 
 .publication-figure {
@@ -542,15 +604,21 @@ p {
 }
 
 .social-icons a {
-  color: white;
+  color: var(--warm-white);
   text-decoration: none;
   display: flex;
   align-items: center;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
 }
 
 .social-icons a:hover {
-  opacity: 0.8;
+  color: var(--accent-blue);
+  background-color: var(--highlight-bg);
+  border-color: var(--border-color);
+  transform: translateX(8px);
 }
 
 .social-icon {

@@ -14,12 +14,13 @@ class EnhancedBackground {
     this.waveCount = 3;
     this.time = 0;
     
-    // Color palette
+    // Color palette - warmer and more inviting
     this.colors = {
-      primary: 'rgba(255, 255, 255, 0.4)',
-      secondary: 'rgba(255, 255, 255, 0.2)',
-      accent: 'rgba(255, 255, 255, 0.1)',
-      wave: 'rgba(255, 255, 255, 0.05)'
+      primary: 'rgba(74, 158, 255, 0.3)',
+      secondary: 'rgba(38, 208, 206, 0.2)',
+      accent: 'rgba(124, 58, 237, 0.15)',
+      wave: 'rgba(74, 158, 255, 0.08)',
+      glow: 'rgba(74, 158, 255, 0.05)'
     };
     
     this.init();
@@ -81,11 +82,11 @@ class EnhancedBackground {
       
       this.ctx.stroke();
       
-      // Create gradient fill
+      // Create gradient fill with warmer colors
       const gradient = this.ctx.createLinearGradient(0, wave.y - wave.amplitude, 0, wave.y + wave.amplitude);
-      gradient.addColorStop(0, 'rgba(255, 255, 255, 0.02)');
-      gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.01)');
-      gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      gradient.addColorStop(0, 'rgba(74, 158, 255, 0.03)');
+      gradient.addColorStop(0.5, 'rgba(38, 208, 206, 0.02)');
+      gradient.addColorStop(1, 'rgba(124, 58, 237, 0.01)');
       
       this.ctx.fillStyle = gradient;
       this.ctx.fill();
@@ -127,7 +128,7 @@ class EnhancedBackground {
       );
       gradient.addColorStop(0, this.colors.primary);
       gradient.addColorStop(0.5, this.colors.secondary);
-      gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      gradient.addColorStop(1, 'rgba(74, 158, 255, 0)');
       
       this.ctx.fillStyle = gradient;
       this.ctx.beginPath();
@@ -188,13 +189,14 @@ class EnhancedBackground {
   animate() {
     this.ctx.clearRect(0, 0, this.width, this.height);
     
-    // Draw background gradient
+    // Draw background gradient with subtle warmth
     const gradient = this.ctx.createRadialGradient(
       this.width / 2, this.height / 2, 0,
       this.width / 2, this.height / 2, Math.max(this.width, this.height) / 2
     );
-    gradient.addColorStop(0, 'rgba(255, 255, 255, 0.01)');
-    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+    gradient.addColorStop(0, 'rgba(74, 158, 255, 0.02)');
+    gradient.addColorStop(0.5, 'rgba(38, 208, 206, 0.01)');
+    gradient.addColorStop(1, 'rgba(124, 58, 237, 0.005)');
     this.ctx.fillStyle = gradient;
     this.ctx.fillRect(0, 0, this.width, this.height);
     
