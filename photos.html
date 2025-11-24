@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photos - Tal Kachman</title>
+  <title>Photos — Tal Kachman</title>
   <link rel="stylesheet" href="styles/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <canvas id="bg"></canvas>
-  <header>
-    <div class="name">Tal Kachman</div>
-    <nav>
-      <a href="index.html">About</a>
-      <a href="social.html">Social</a>
-      <a href="photos.html">Photos</a>
-      <a href="travel.html">Travel</a>
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Photo Gallery</h1>
-    <p>A collection of moments captured through my lens—from travels and local explorations to everyday discoveries.</p>
-    
-    <!-- Filter buttons will be dynamically inserted here -->
-    
-    <div class="gallery-grid">
-      <!-- Photos will be dynamically loaded here -->
-    </div>
-  </main>
-  <script src="scripts/network.js"></script>
-  <script src="scripts/gallery.js"></script>
+  <div class="container">
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="photos.html" class="active">Photos</a>
+        <a href="travel.html">Travel</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Photos</h1>
+      <section class="photo-grid">
+        <div class="photo-placeholder">Photo 1</div>
+        <div class="photo-placeholder">Photo 2</div>
+        <div class="photo-placeholder">Photo 3</div>
+        <div class="photo-placeholder">Photo 4</div>
+        <div class="photo-placeholder">Photo 5</div>
+        <div class="photo-placeholder">Photo 6</div>
+      </section>
+    </main>
+
+    <footer>
+      <p>tal.kachman@ru.nl</p>
+    </footer>
+  </div>
 </body>
+
 </html>

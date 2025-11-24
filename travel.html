@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Travel / Photography</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel — Tal Kachman</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <canvas id="bg"></canvas>
-  <header>
-    <div class="name">Tal Kachman</div>
-    <nav>
-      <a href="index.html">About</a>
-      <a href="social.html">Social</a>
-      <a href="photos.html">Photos</a>
-      <a href="travel.html">Travel</a>
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Travel / Photography</h1>
-    <p>Coming soon: a gallery of images, places, and moments.</p>
-  </main>
-  <script src="scripts/network.js"></script>
+  <div class="container">
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="photos.html">Photos</a>
+        <a href="travel.html" class="active">Travel</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Travel</h1>
+      <section class="travel-list">
+        <article class="travel-item">
+          <span class="travel-date">2024</span>
+          <h3>Place Name</h3>
+          <p>A brief note about this place.</p>
+        </article>
+        <article class="travel-item">
+          <span class="travel-date">2023</span>
+          <h3>Another Place</h3>
+          <p>A brief note about this place.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>tal.kachman@ru.nl</p>
+    </footer>
+  </div>
 </body>
+
 </html>
