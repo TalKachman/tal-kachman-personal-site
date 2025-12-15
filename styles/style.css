@@ -187,9 +187,21 @@ h1 {
 .about-content p {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.25rem;
-  color: var(--text-muted);
+  color: #d0d0d0;
   margin-bottom: 1.5rem;
   line-height: 1.8;
+}
+
+.about-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-muted);
+  transition: all 0.3s ease;
+}
+
+.about-content a:hover {
+  border-bottom-color: var(--accent);
+  color: #e6d4a3;
 }
 
 .about-content p:first-of-type {
