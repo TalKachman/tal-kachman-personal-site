@@ -5,18 +5,25 @@
 }
 
 :root {
-  --bg: #121212;
-  --bg-elevated: #1a1a1a;
-  --text: #e0e0e0;
-  --text-muted: #707070;
-  --text-subtle: #505050;
-  --accent: #c9a962;
-  --accent-muted: rgba(201, 169, 98, 0.15);
+  --bg: #10100f;
+  --bg-elevated: #1a1917;
+  --surface: #181715;
+  --surface-soft: #211f1b;
+  --text: #eee9df;
+  --text-muted: #a09a8d;
+  --text-subtle: #686156;
+  --line: rgba(238, 233, 223, 0.09);
+  --accent: #d0aa64;
+  --accent-cool: #7aa39a;
+  --accent-muted: rgba(208, 170, 100, 0.16);
 }
 
 body, html {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 18% 8%, rgba(208, 170, 100, 0.08), transparent 28rem),
+    linear-gradient(145deg, rgba(122, 163, 154, 0.06), transparent 34rem);
   color: var(--text);
   min-height: 100vh;
   line-height: 1.7;
@@ -27,7 +34,7 @@ body, html {
 }
 
 .container {
-  max-width: 720px;
+  max-width: 920px;
   margin: 0 auto;
   padding: 0 3rem;
   min-height: 100vh;
@@ -43,6 +50,7 @@ header {
 nav {
   display: flex;
   gap: 2.5rem;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -84,17 +92,26 @@ main {
 }
 
 main.landing {
-  padding: 2rem 0;
+  padding: 2rem 0 4rem;
 }
 
 .landing-content {
-  max-width: 560px;
+  max-width: 720px;
+}
+
+.landing-kicker,
+.section-label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.35rem;
+  text-transform: uppercase;
 }
 
 /* Profile Image */
 .profile-image {
-  width: 120px;
-  height: 120px;
+  width: 138px;
+  height: 138px;
   margin-bottom: 2rem;
   position: relative;
 }
@@ -107,7 +124,7 @@ main.landing {
   right: -4px;
   bottom: -4px;
   border: 1px solid var(--accent-muted);
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.4s ease;
 }
 
@@ -131,7 +148,7 @@ main.landing {
 .prose {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.15rem;
-  color: var(--text-muted);
+  color: #cfc5b4;
   line-height: 1.9;
   margin-top: 1.5rem;
   font-style: italic;
@@ -139,7 +156,7 @@ main.landing {
 
 h1 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 3.5rem;
+  font-size: 4.7rem;
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -155,12 +172,13 @@ h1 {
 
 .intro {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.4rem;
+  font-size: 1.55rem;
   font-weight: 300;
   font-style: italic;
   color: var(--text);
   line-height: 1.8;
   margin-bottom: 1.5rem;
+  max-width: 660px;
 }
 
 .secondary {
@@ -260,16 +278,37 @@ h1 {
 }
 
 /* Photos Page */
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2px;
-  margin-top: 3rem;
+.page-stack {
+  align-items: stretch;
+  display: block;
+  padding: 2rem 0 4rem;
 }
 
-.photo-placeholder {
+.page-intro {
+  max-width: 660px;
+}
+
+.page-intro p {
+  color: var(--text-muted);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1.75;
+  margin-top: 1.3rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 3rem;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.photo-placeholder,
+.photo-tile {
   aspect-ratio: 1;
-  background: var(--bg-elevated);
+  background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -279,13 +318,44 @@ h1 {
   text-transform: uppercase;
   transition: all 0.4s ease;
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
 }
 
-.photo-placeholder:hover {
-  background: #222;
+.photo-placeholder:hover,
+.photo-tile:hover {
+  background: var(--surface-soft);
 }
 
-/* Travel Page */
+.photo-tile.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.photo-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(28%) contrast(1.08);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.photo-tile:hover img {
+  filter: grayscale(5%) contrast(1.02);
+  transform: scale(1.025);
+}
+
+.photo-tile figcaption {
+  bottom: 1rem;
+  color: var(--text);
+  font-size: 0.72rem;
+  left: 1rem;
+  letter-spacing: 0.16em;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+/* Atlas Page */
 .travel-list {
   margin-top: 3rem;
 }
@@ -299,6 +369,149 @@ h1 {
 .travel-item:hover {
   padding-left: 1rem;
   border-color: var(--accent-muted);
+}
+
+.atlas-console {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(240px, 0.8fr);
+  margin-top: 3rem;
+  min-height: 420px;
+}
+
+.atlas-map {
+  background:
+    radial-gradient(circle at 18% 46%, rgba(122, 163, 154, 0.2), transparent 5rem),
+    radial-gradient(circle at 56% 38%, rgba(122, 163, 154, 0.18), transparent 7rem),
+    radial-gradient(circle at 78% 52%, rgba(122, 163, 154, 0.16), transparent 6rem),
+    radial-gradient(circle at 32% 45%, rgba(208, 170, 100, 0.18), transparent 13rem),
+    var(--surface);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  position: relative;
+}
+
+.atlas-map::before {
+  content: '';
+  position: absolute;
+  inset: 8%;
+  background:
+    linear-gradient(140deg, transparent 12%, rgba(238, 233, 223, 0.12) 12.5%, transparent 13%),
+    linear-gradient(28deg, transparent 28%, rgba(238, 233, 223, 0.1) 28.5%, transparent 29%),
+    linear-gradient(88deg, transparent 63%, rgba(238, 233, 223, 0.08) 63.5%, transparent 64%);
+  opacity: 0.75;
+}
+
+.map-grid {
+  background:
+    linear-gradient(rgba(238, 233, 223, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(238, 233, 223, 0.045) 1px, transparent 1px);
+  background-size: 52px 52px;
+  inset: 0;
+  position: absolute;
+}
+
+.route-line {
+  border-top: 1px solid rgba(208, 170, 100, 0.28);
+  position: absolute;
+  transform-origin: left center;
+}
+
+.route-one {
+  left: 21%;
+  top: 53%;
+  transform: rotate(-12deg);
+  width: 42%;
+}
+
+.route-two {
+  left: 52%;
+  top: 40%;
+  transform: rotate(18deg);
+  width: 31%;
+}
+
+.map-pin {
+  background: var(--accent);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(208, 170, 100, 0.1);
+  cursor: pointer;
+  height: 9px;
+  padding: 0;
+  position: absolute;
+  width: 9px;
+  z-index: 2;
+}
+
+.map-pin span {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  left: 1rem;
+  letter-spacing: 0.08em;
+  position: absolute;
+  text-transform: uppercase;
+  top: -0.35rem;
+  white-space: nowrap;
+}
+
+.map-pin.amsterdam { left: 49%; top: 34%; }
+.map-pin.lisbon { left: 26%; top: 58%; }
+.map-pin.tokyo { left: 74%; top: 46%; }
+.map-pin.nyc { left: 17%; top: 32%; }
+.map-pin.shanghai { left: 68%; top: 56%; }
+
+.atlas-panel {
+  background: rgba(24, 23, 21, 0.86);
+  border: 1px solid var(--line);
+  border-left: 0;
+  padding: 2rem;
+}
+
+.atlas-panel h2,
+.post-preview h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.atlas-panel p {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+.atlas-meta,
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.5rem;
+}
+
+.atlas-meta span,
+.filter-row span {
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  padding: 0.45rem 0.65rem;
+  text-transform: uppercase;
+}
+
+.atlas-search {
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  margin-top: 1.5rem;
+  padding: 1.25rem 0;
+}
+
+.atlas-search p {
+  color: var(--text);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
 }
 
 .travel-item:first-child {
@@ -326,10 +539,35 @@ h1 {
   font-style: italic;
 }
 
+/* Blog Page */
+.post-list {
+  border-top: 1px solid var(--line);
+  margin-top: 3rem;
+}
+
+.post-preview {
+  border-bottom: 1px solid var(--line);
+  padding: 2rem 0;
+}
+
+.post-date {
+  color: var(--accent);
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.post-preview p {
+  color: var(--text-muted);
+  max-width: 620px;
+}
+
 /* Footer */
 footer {
   padding: 3rem 0 4rem;
-  border-top: 1px solid #1a1a1a;
+  border-top: 1px solid var(--line);
 }
 
 .footer-content {
@@ -380,7 +618,7 @@ main:not(.landing) h1::after {
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .intro {
@@ -392,7 +630,7 @@ main:not(.landing) h1::after {
   }
 
   nav {
-    gap: 2rem;
+    gap: 1.25rem;
   }
 
   .footer-content {
@@ -402,7 +640,26 @@ main:not(.landing) h1::after {
   }
 
   .photo-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .photo-tile.featured {
+    grid-column: span 2;
+  }
+
+  .atlas-console {
     grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .atlas-map {
+    aspect-ratio: 4 / 3;
+  }
+
+  .atlas-panel {
+    border-left: 1px solid var(--line);
+    border-top: 0;
+    padding: 1.5rem;
   }
 }
 

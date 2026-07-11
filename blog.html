@@ -1,43 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Blog</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Tal Kachman</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-  <canvas id="bg"></canvas>
-  <header>
-    <div class="name">Tal Kachman</div>
-    <nav>
-      <a href="index.html">About</a>
-      <a href="research.html">Research</a>
-      <!-- <a href="publications.html">Publications</a> -->
-      <a href="resources.html">Resources</a>
-      <a href="faq.html">FAQ</a>
-      <a href="prospective-students.html">Students</a>
-      <!-- <a href="photos.html">Photos</a> -->
-      <!-- <a href="travel.html">Travel</a> -->
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Blog</h1>
-    <p>Thoughts on research, learning, and the intersection of intelligence and complexity. This space will evolve as ideas take shape.</p>
-    
-    <div class="blog-placeholder">
-      <div class="coming-soon">
-        <h2>Coming Soon</h2>
-        <p>I'm planning to share insights on:</p>
-        <ul class="blog-topics">
-          <li>Research methodologies in AI and complex systems</li>
-          <li>Learning resources and academic insights</li>
-          <li>Thoughts on the intersection of physics and machine learning</li>
-          <li>Reflections on academic life and research</li>
-        </ul>
-        <p class="blog-note">In the meantime, feel free to explore my research and connect via social media.</p>
+  <div class="container">
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="photos.html">Photos</a>
+        <a href="travel.html">Atlas</a>
+        <a href="blog.html" class="active">Blog</a>
+      </nav>
+    </header>
+
+    <main class="page-stack">
+      <section class="page-intro">
+        <span class="section-label">Notes</span>
+        <h1>Blog</h1>
+        <p>Short essays, field notes, recommendations, and ideas that do not need a journal article to justify their existence.</p>
+      </section>
+
+      <section class="post-list" aria-label="Blog posts">
+        <article class="post-preview">
+          <span class="post-date">Coming soon</span>
+          <h2>Travel notes with coordinates</h2>
+          <p>A place for recommendations, routes, and the kind of practical details that disappear first from memory.</p>
+        </article>
+        <article class="post-preview">
+          <span class="post-date">Coming soon</span>
+          <h2>Photography as a second notebook</h2>
+          <p>Small reflections on making images while moving through unfamiliar places.</p>
+        </article>
+        <article class="post-preview">
+          <span class="post-date">Coming soon</span>
+          <h2>Games, machines, and other arguments</h2>
+          <p>Occasional thoughts adjacent to the academic work, written in a looser key.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <span class="location">Second star from the right, straight till morning</span>
+        <span class="contact">echo ubm.lbdinbo@sv.om| tr '[b-{]' '[a-z]'</span>
       </div>
-    </div>
-  </main>
-  <script src="scripts/enhanced-bg.js"></script>
+    </footer>
+  </div>
 </body>
+
 </html>

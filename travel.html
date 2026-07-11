@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel — Tal Kachman</title>
+  <title>Atlas — Tal Kachman</title>
   <link rel="stylesheet" href="styles/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -16,28 +18,77 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="photos.html">Photos</a>
-        <a href="travel.html" class="active">Travel</a>
+        <a href="travel.html" class="active">Atlas</a>
+        <a href="blog.html">Blog</a>
       </nav>
     </header>
 
-    <main>
-      <h1>Travel</h1>
+    <main class="page-stack">
+      <section class="page-intro">
+        <span class="section-label">Travel notes</span>
+        <h1>Atlas</h1>
+        <p>A map-led index for remembered routes, recommendations, photographs, and the small coordinates worth keeping.</p>
+      </section>
+
+      <section class="atlas-console" aria-label="Atlas map and place index">
+        <div class="atlas-map" aria-label="Map preview">
+          <div class="map-grid"></div>
+          <div class="route-line route-one"></div>
+          <div class="route-line route-two"></div>
+          <button class="map-pin amsterdam" type="button"><span>Amsterdam</span></button>
+          <button class="map-pin lisbon" type="button"><span>Lisbon</span></button>
+          <button class="map-pin tokyo" type="button"><span>Tokyo</span></button>
+          <button class="map-pin nyc" type="button"><span>New York</span></button>
+          <button class="map-pin shanghai" type="button"><span>Shanghai</span></button>
+        </div>
+
+        <aside class="atlas-panel" aria-label="Selected place">
+          <span class="section-label">Selected pin</span>
+          <h2>Amsterdam</h2>
+          <p>Canals, brown cafes, late trains, and a standing list of places to bring friends who say they only have one night.</p>
+          <div class="atlas-meta">
+            <span>Restaurants</span>
+            <span>Walks</span>
+            <span>Photos</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="atlas-search" aria-label="Atlas filters">
+        <p>Ask for a city, a mood, a meal, or a day-shaped plan.</p>
+        <div class="filter-row" aria-label="Suggested filters">
+          <span>Food</span>
+          <span>Bars</span>
+          <span>Walks</span>
+          <span>Bookshops</span>
+          <span>Return to</span>
+        </div>
+      </section>
+
       <section class="travel-list">
         <article class="travel-item">
-          <span class="travel-date">2024</span>
-          <h3>Place Name</h3>
-          <p>A brief note about this place.</p>
+          <span class="travel-date">Amsterdam</span>
+          <h3>One good evening</h3>
+          <p>A short walk, a small table, and somewhere quiet enough to hear the second story.</p>
         </article>
         <article class="travel-item">
-          <span class="travel-date">2023</span>
-          <h3>Another Place</h3>
-          <p>A brief note about this place.</p>
+          <span class="travel-date">Lisbon</span>
+          <h3>Hills, tiles, seafood</h3>
+          <p>A place note with room for photos, restaurants, and the exact turn that makes the climb worthwhile.</p>
+        </article>
+        <article class="travel-item">
+          <span class="travel-date">Tokyo</span>
+          <h3>Saved for later</h3>
+          <p>The eventual version can filter by city, category, visit date, and whether I would go back tomorrow.</p>
         </article>
       </section>
     </main>
 
     <footer>
-      <p>tal.kachman@ru.nl</p>
+      <div class="footer-content">
+        <span class="location">Second star from the right, straight till morning</span>
+        <span class="contact">echo ubm.lbdinbo@sv.om| tr '[b-{]' '[a-z]'</span>
+      </div>
     </footer>
   </div>
 </body>
