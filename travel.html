@@ -35,22 +35,23 @@
           <div class="map-grid"></div>
           <div class="route-line route-one"></div>
           <div class="route-line route-two"></div>
-          <button class="map-pin amsterdam" type="button"><span>Amsterdam</span></button>
-          <button class="map-pin lisbon" type="button"><span>Lisbon</span></button>
-          <button class="map-pin tokyo" type="button"><span>Tokyo</span></button>
-          <button class="map-pin nyc" type="button"><span>New York</span></button>
-          <button class="map-pin shanghai" type="button"><span>Shanghai</span></button>
+          <button class="map-pin amsterdam is-active" type="button" data-place="amsterdam" aria-pressed="true"><span>Amsterdam</span></button>
+          <button class="map-pin lisbon" type="button" data-place="lisbon" aria-pressed="false"><span>Lisbon</span></button>
+          <button class="map-pin tokyo" type="button" data-place="tokyo" aria-pressed="false"><span>Tokyo</span></button>
+          <button class="map-pin nyc" type="button" data-place="nyc" aria-pressed="false"><span>New York</span></button>
+          <button class="map-pin shanghai" type="button" data-place="shanghai" aria-pressed="false"><span>Shanghai</span></button>
         </div>
 
         <aside class="atlas-panel" aria-label="Selected place">
           <span class="section-label">Selected pin</span>
-          <h2>Amsterdam</h2>
-          <p>Canals, brown cafes, late trains, and a standing list of places to bring friends who say they only have one night.</p>
+          <h2 id="atlas-place-title">Amsterdam</h2>
+          <p id="atlas-place-description">Canals, brown cafes, late trains, and a standing list of places to bring friends who say they only have one night.</p>
           <div class="atlas-meta">
             <span>Restaurants</span>
             <span>Walks</span>
             <span>Photos</span>
           </div>
+          <p class="atlas-panel-note" id="atlas-place-note">Start near the water, keep dinner informal, and let the route bend toward conversation.</p>
         </aside>
       </section>
 
@@ -66,20 +67,30 @@
       </section>
 
       <section class="travel-list">
-        <article class="travel-item">
+        <article class="travel-item is-active" data-place-card="amsterdam">
           <span class="travel-date">Amsterdam</span>
           <h3>One good evening</h3>
           <p>A short walk, a small table, and somewhere quiet enough to hear the second story.</p>
         </article>
-        <article class="travel-item">
+        <article class="travel-item" data-place-card="lisbon">
           <span class="travel-date">Lisbon</span>
           <h3>Hills, tiles, seafood</h3>
           <p>A place note with room for photos, restaurants, and the exact turn that makes the climb worthwhile.</p>
         </article>
-        <article class="travel-item">
+        <article class="travel-item" data-place-card="tokyo">
           <span class="travel-date">Tokyo</span>
           <h3>Saved for later</h3>
           <p>The eventual version can filter by city, category, visit date, and whether I would go back tomorrow.</p>
+        </article>
+        <article class="travel-item" data-place-card="nyc">
+          <span class="travel-date">New York</span>
+          <h3>Old addresses, new appetite</h3>
+          <p>A fast list for neighborhoods, counters, late rooms, and the places that still know how to hold noise.</p>
+        </article>
+        <article class="travel-item" data-place-card="shanghai">
+          <span class="travel-date">Shanghai</span>
+          <h3>First city notes</h3>
+          <p>Food memories, old routines, and the kind of city scale that rewrites your sense of distance.</p>
         </article>
       </section>
     </main>
@@ -91,6 +102,7 @@
       </div>
     </footer>
   </div>
+  <script src="scripts/atlas.js"></script>
 </body>
 
 </html>

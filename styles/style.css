@@ -363,12 +363,18 @@ h1 {
 .travel-item {
   padding: 2rem 0;
   border-bottom: 1px solid #1f1f1f;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.travel-item:hover {
+.travel-item:hover,
+.travel-item.is-active {
   padding-left: 1rem;
   border-color: var(--accent-muted);
+}
+
+.travel-item.is-active h3 {
+  color: var(--text);
 }
 
 .atlas-console {
@@ -439,8 +445,15 @@ h1 {
   height: 9px;
   padding: 0;
   position: absolute;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
   width: 9px;
   z-index: 2;
+}
+
+.map-pin::before {
+  content: '';
+  inset: -14px;
+  position: absolute;
 }
 
 .map-pin span {
@@ -448,10 +461,33 @@ h1 {
   font-size: 0.7rem;
   left: 1rem;
   letter-spacing: 0.08em;
+  opacity: 0.72;
   position: absolute;
   text-transform: uppercase;
   top: -0.35rem;
+  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
   white-space: nowrap;
+}
+
+.map-pin:hover,
+.map-pin:focus-visible,
+.map-pin.is-active {
+  background: #f2d79a;
+  box-shadow: 0 0 0 9px rgba(208, 170, 100, 0.16), 0 0 28px rgba(208, 170, 100, 0.32);
+  transform: scale(1.35);
+}
+
+.map-pin:hover span,
+.map-pin:focus-visible span,
+.map-pin.is-active span {
+  color: var(--text);
+  opacity: 1;
+  transform: translateX(0.2rem);
+}
+
+.map-pin:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 8px;
 }
 
 .map-pin.amsterdam { left: 49%; top: 34%; }
@@ -480,6 +516,16 @@ h1 {
   color: var(--text-muted);
   font-size: 0.94rem;
   line-height: 1.8;
+}
+
+.atlas-panel-note {
+  border-top: 1px solid var(--line);
+  color: #cfc5b4;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  margin-top: 1.5rem;
+  padding-top: 1.4rem;
 }
 
 .atlas-meta,
