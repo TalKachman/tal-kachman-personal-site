@@ -110,8 +110,8 @@ main.landing {
 
 /* Profile Image */
 .profile-image {
-  width: 138px;
-  height: 138px;
+  width: 172px;
+  height: 172px;
   margin-bottom: 2rem;
   position: relative;
 }
@@ -771,8 +771,8 @@ main:not(.landing) h1::after {
   }
 
   .profile-image {
-    width: 100px;
-    height: 100px;
+    width: 132px;
+    height: 132px;
     margin-bottom: 1.5rem;
   }
 
