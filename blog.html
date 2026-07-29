@@ -1,43 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Blog</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Tal Kachman</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-  <canvas id="bg"></canvas>
-  <header>
-    <div class="name">Tal Kachman</div>
-    <nav>
-      <a href="index.html">About</a>
-      <a href="research.html">Research</a>
-      <!-- <a href="publications.html">Publications</a> -->
-      <a href="resources.html">Resources</a>
-      <a href="faq.html">FAQ</a>
-      <a href="prospective-students.html">Students</a>
-      <!-- <a href="photos.html">Photos</a> -->
-      <!-- <a href="travel.html">Travel</a> -->
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Blog</h1>
-    <p>Thoughts on research, learning, and the intersection of intelligence and complexity. This space will evolve as ideas take shape.</p>
-    
-    <div class="blog-placeholder">
-      <div class="coming-soon">
-        <h2>Coming Soon</h2>
-        <p>I'm planning to share insights on:</p>
-        <ul class="blog-topics">
-          <li>Research methodologies in AI and complex systems</li>
-          <li>Learning resources and academic insights</li>
-          <li>Thoughts on the intersection of physics and machine learning</li>
-          <li>Reflections on academic life and research</li>
-        </ul>
-        <p class="blog-note">In the meantime, feel free to explore my research and connect via social media.</p>
+  <div class="container">
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="blog.html" class="active">Blog</a>
+      </nav>
+    </header>
+
+    <main class="page-stack">
+      <section class="page-intro">
+        <span class="section-label">Notes</span>
+        <h1>Blog</h1>
+        <p>Short essays, field notes, recommendations, and ideas that do not need a journal article to justify their existence.</p>
+      </section>
+
+      <section class="blog-tools" aria-label="Blog search and filters">
+        <label class="search-label" for="post-search">Search notes</label>
+        <input id="post-search" type="search" placeholder="Search by title, tag, date, or phrase" autocomplete="off">
+        <div class="tag-filters" aria-label="Filter posts by tag">
+          <button class="tag-filter is-active" type="button" data-tag="all">All</button>
+          <button class="tag-filter" type="button" data-tag="travel">Travel</button>
+          <button class="tag-filter" type="button" data-tag="photos">Photos</button>
+          <button class="tag-filter" type="button" data-tag="ai">AI</button>
+          <button class="tag-filter" type="button" data-tag="notes">Notes</button>
+        </div>
+      </section>
+
+      <section class="sticky-posts" aria-label="Pinned posts">
+        <span class="section-label">Always on top</span>
+        <article class="post-preview pinned" data-post data-tags="notes atlas travel" data-date="Pinned">
+          <span class="post-date">Pinned</span>
+          <h2>Why this page exists</h2>
+          <p>A small orientation note for the personal site: travel, photos, ideas, and the parts that belong outside the academic machinery.</p>
+          <div class="post-tags">
+            <span>Notes</span>
+            <span>Atlas</span>
+            <span>Travel</span>
+          </div>
+        </article>
+        <article class="post-preview pinned" data-post data-tags="photos atlas" data-date="Pinned">
+          <span class="post-date">Pinned</span>
+          <h2>The future atlas</h2>
+          <p>Eventually the map will become a place where hovering across cities reveals photos, recommendations, and short field notes.</p>
+          <div class="post-tags">
+            <span>Photos</span>
+            <span>Atlas</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="post-list" aria-label="Dated blog posts">
+        <span class="section-label">Entries</span>
+        <article class="post-preview" data-post data-tags="travel atlas recommendations" data-date="2026-07-28">
+          <span class="post-date">July 28, 2026</span>
+          <h2>Travel notes with coordinates</h2>
+          <p>A place for recommendations, routes, and the kind of practical details that disappear first from memory.</p>
+          <div class="post-tags">
+            <span>Travel</span>
+            <span>Atlas</span>
+            <span>Recommendations</span>
+          </div>
+        </article>
+        <article class="post-preview" data-post data-tags="photos travel notes" data-date="2026-07-28">
+          <span class="post-date">July 28, 2026</span>
+          <h2>Photography as a second notebook</h2>
+          <p>Small reflections on making images while moving through unfamiliar places.</p>
+          <div class="post-tags">
+            <span>Photos</span>
+            <span>Travel</span>
+            <span>Notes</span>
+          </div>
+        </article>
+        <article class="post-preview" data-post data-tags="ai games research" data-date="2026-07-28">
+          <span class="post-date">July 28, 2026</span>
+          <h2>Games, machines, and other arguments</h2>
+          <p>Occasional thoughts adjacent to the academic work, written in a looser key.</p>
+          <div class="post-tags">
+            <span>AI</span>
+            <span>Games</span>
+            <span>Research</span>
+          </div>
+        </article>
+        <p class="empty-state" hidden>No notes match that search yet.</p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <span class="location">Second star from the right, straight till morning</span>
+        <span class="contact">echo ubm.lbdinbo@sv.om| tr '[b-{]' '[a-z]'</span>
       </div>
-    </div>
-  </main>
-  <script src="scripts/enhanced-bg.js"></script>
+    </footer>
+  </div>
+  <script src="scripts/blog.js"></script>
+  <script src="scripts/analytics.js"></script>
 </body>
+
 </html>
