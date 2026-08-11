@@ -14,6 +14,7 @@ Then open [http://localhost:8000](http://localhost:8000).
 
 - `index.html` — landing page
 - `about.html` — personal background and links
+- `papers-that-influenced-me.html` — a minimal, discipline-based collection linked from Blog's Sticky Things
 - `blog.html` — notes with search, tags, pinned posts, and dated entries
 - `travel.html` and `photos.html` — hidden for now, reserved for the future Atlas/photo experience
 
