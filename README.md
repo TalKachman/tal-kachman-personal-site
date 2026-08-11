@@ -16,7 +16,6 @@ Then open [http://localhost:8000](http://localhost:8000).
 - `about.html` — personal background and links
 - `papers-that-influenced-me.html` — a minimal, discipline-based collection linked from Blog's Sticky Things
 - `blog.html` — notes with search, tags, pinned posts, and dated entries
-- `destinations.html` — an unlinked visual place-index prototype for the photographic gallery
 - `travel.html` and `photos.html` — hidden prototypes retained for future Atlas/photo work
 
 Google Analytics is wired through `scripts/analytics.js`; add the GA4 measurement ID there when the site is ready to track traffic.
