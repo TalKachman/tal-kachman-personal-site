@@ -214,19 +214,6 @@ main.landing {
   pointer-events: none;
 }
 
-.landing-image::after {
-  background: var(--bg);
-  color: var(--text-subtle);
-  content: 'FIELD / 001';
-  font-size: 0.58rem;
-  letter-spacing: 0.16em;
-  padding: 0.35rem 0 0.35rem 0.65rem;
-  position: absolute;
-  right: 0;
-  text-transform: uppercase;
-  top: 0;
-}
-
 .landing-image img {
   aspect-ratio: 4 / 5;
   display: block;
